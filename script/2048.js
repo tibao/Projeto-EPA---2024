@@ -162,6 +162,7 @@ function startGame() {
         squares[i].innerHTML = combinedTotal;
         squares[i + width].innerHTML = 0;
         score += combinedTotal;
+        updateScore();
         scoreDisplay.innerHTML = score;
       }
     }
@@ -233,6 +234,7 @@ function startGame() {
       resultDisplay.innerHTML = "You LOSE";
       document.removeEventListener("keyup", control);
       setTimeout(() => clear(), 3000);
+      openPopUp()
     }
   }
 
@@ -274,3 +276,25 @@ function startGame() {
 
   var myTimer = setInterval(addColours, 50);
 }
+
+
+function updateScore() {
+  document.getElementById('score').textContent = "Pontuação: " + score;
+
+  var input = document.getElementById('scoreInput');
+  input.value = score;
+  console.log(score);
+}
+
+function openPopUp() {
+  var popUp = document.getElementById("myModal");
+  popUp.style.display = "block";
+}
+
+function closePopUp() {
+  var popUp = document.getElementById("myModal");
+  popUp.style.display = "none";
+
+  restartGame();
+}
+

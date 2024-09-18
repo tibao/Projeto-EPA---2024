@@ -55,7 +55,7 @@
             <button onclick="startGame()" id="start_game">Iniciar Jogo</button>
         </div>
 
-        <div id="gameOverPopUp" class="popUp">
+        <div id="myModal" class="popUp">
             <div class="popUp-content">
                 <div class="popUp-header">
                     <h2>Game Over!</h2>
@@ -76,7 +76,7 @@
         <div class="tLeft">
             <h3>Como jogar?</h3>
             <ul>
-                <li>Utilize a seta para cima ou espaço para subir.</li>
+                <li>Utilize a setas para mover os blocos.</li>
             </ul>
         </div>
         <div class="tRight">
@@ -112,7 +112,7 @@
 <?php
 if (filter_input(type: INPUT_POST, var_name: 'restart_game')) {
     $nome = filter_input(type: INPUT_POST, var_name: 'name');
-    $pontucacao = filter_input(type: INPUT_POST, var_name: 'scoreInput');
+    $pontucacao = filter_input(type: INPUT_POST, var_name: 'score');
 
     $dados = array(
         'name' => $nome,

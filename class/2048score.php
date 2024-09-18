@@ -17,7 +17,7 @@ public function getJsonDados()
 
     public function salvar(): bool|string
     {
-        $caminho = curl_init(url: $this->url . 'Quiz.json');
+        $caminho = curl_init(url: $this->url . '2048.json');
 
         curl_setopt(handle: $caminho, option: CURLOPT_CUSTOMREQUEST, value: "POST");
         curl_setopt(handle: $caminho, option: CURLOPT_POSTFIELDS, value: $this->jsonDados);
@@ -31,7 +31,7 @@ public function getJsonDados()
 
     public function listar()
     {
-        $caminho = curl_init($this->url . 'Quiz.json');
+        $caminho = curl_init($this->url . '2048.json');
 
         curl_setopt($caminho, CURLOPT_RETURNTRANSFER, true);
 
